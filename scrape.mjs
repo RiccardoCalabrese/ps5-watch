@@ -33,6 +33,15 @@ const CHROME = process.env.CHROME_PATH
       : 'google-chrome');
 const EXTRA_FLAGS = process.platform === 'darwin' ? [] : ['--no-sandbox', '--disable-dev-shm-usage'];
 
+// The User-Agent must match the platform we are actually running on. Headless Chrome's
+// own UA says "HeadlessChrome", which is an instant tell, so we do have to override it —
+// but claiming macOS while running on Linux is a WORSE tell, because everything else the
+// page can see (navigator.platform, the WebGL renderer, the font list) still says Linux.
+// Back Market refused GitHub's Linux runners while accepting the same code on macOS.
+const UA = process.platform === 'darwin'
+  ? 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36'
+  : 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/152.0.0.0 Safari/537.36';
+
 // ─────────────────────────────────────────────────────────────────────────────
 // CONFIG — everything tunable lives here.
 // ─────────────────────────────────────────────────────────────────────────────
@@ -145,8 +154,7 @@ async function chrome(lang) {
   const port = 9200 + Math.floor(Math.random() * 700);
   const proc = spawn(CHROME, [...EXTRA_FLAGS, '--headless=new', '--disable-gpu', '--no-first-run',
     '--no-default-browser-check', `--remote-debugging-port=${port}`, `--user-data-dir=${dir}`,
-    '--window-size=1400,1000', `--lang=${lang}`,
-    '--user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36',
+    '--window-size=1400,1000', `--lang=${lang}`, `--user-agent=${UA}`,
     ], { stdio: 'ignore' });
 
   // Attach to the tab Chrome opened for itself, rather than Target.createTarget-ing a
