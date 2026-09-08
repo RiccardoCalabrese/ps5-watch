@@ -1,0 +1,191 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>PS5 Watch — Back Market across Europe</title>
+<style>
+  :root {
+    --bg:#f6f7f9; --card:#fff; --ink:#12141a; --muted:#5f6672; --line:#e3e6ea;
+    --accent:#2f6df6; --good:#0f8a4a; --goodbg:#e6f6ed; --warn:#9a6200; --warnbg:#fff4dc;
+    --dead:#8b919b; --shadow:0 1px 2px rgba(16,20,30,.05),0 4px 12px rgba(16,20,30,.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg:#0e1014; --card:#171a20; --ink:#e9ecf1; --muted:#9aa2ae; --line:#262b34;
+      --accent:#6f9bff; --good:#4ad48b; --goodbg:#12301f; --warn:#f0b429; --warnbg:#3a2c0d;
+      --dead:#6b7280; --shadow:none;
+    }
+  }
+  * { box-sizing:border-box }
+  body { margin:0; background:var(--bg); color:var(--ink); font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; }
+  .wrap { max-width:1080px; margin:0 auto; padding:28px 18px 64px }
+  h1 { font-size:26px; margin:0 0 4px; letter-spacing:-.02em }
+  .sub { color:var(--muted); margin:0 0 20px; font-size:14px }
+  .banner { padding:12px 14px; border-radius:10px; margin:0 0 18px; font-size:14px; background:var(--warnbg); color:var(--warn); border:1px solid rgba(154,98,0,.25) }
+  .hero { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:18px 20px; margin:0 0 20px; box-shadow:var(--shadow) }
+  .hero .big { font-size:30px; font-weight:650; letter-spacing:-.02em }
+  .hero .cap { color:var(--muted); font-size:13px; margin-top:2px }
+  .controls { display:flex; flex-wrap:wrap; gap:8px; margin:0 0 16px; align-items:center }
+  .chip { border:1px solid var(--line); background:var(--card); color:var(--ink); border-radius:999px;
+          padding:6px 13px; font-size:13px; cursor:pointer; user-select:none }
+  .chip[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#fff }
+  .chip.sep { border:0; background:none; color:var(--muted); cursor:default; padding-left:4px }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line);
+          border-radius:14px; overflow:hidden; box-shadow:var(--shadow) }
+  th, td { text-align:left; padding:11px 14px; border-bottom:1px solid var(--line); font-size:14px; white-space:nowrap }
+  th { font-size:12px; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); font-weight:600; cursor:pointer }
+  tr:last-child td { border-bottom:0 }
+  td.price { font-weight:650; font-variant-numeric:tabular-nums }
+  td.model { white-space:normal }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px; font-size:12px; font-weight:600 }
+  .pill.stock { background:var(--goodbg); color:var(--good) }
+  .pill.out { background:transparent; color:var(--dead); border:1px solid var(--line) }
+  .pill.hit { background:var(--accent); color:#fff }
+  tr.out td { color:var(--dead) }
+  a.buy { color:var(--accent); text-decoration:none; font-weight:600 }
+  a.buy:hover { text-decoration:underline }
+  .muted { color:var(--muted) }
+  .empty { padding:36px; text-align:center; color:var(--muted) }
+  .none { margin-top:14px; padding:11px 14px; border:1px dashed var(--line); border-radius:10px;
+          color:var(--muted); font-size:13px }
+  footer { margin-top:22px; color:var(--muted); font-size:13px }
+  .scroll { overflow-x:auto }
+  @media (max-width:640px){ .wrap{padding:18px 12px 48px} h1{font-size:21px} .hero .big{font-size:24px} }
+</style>
+
+<div class="wrap">
+  <h1>PS5 Watch</h1>
+  <p class="sub">Used PlayStation 5 consoles across six Back Market marketplaces.</p>
+  <div id="banner"></div>
+  <div class="hero" id="hero"></div>
+  <div class="controls" id="controls"></div>
+  <div class="scroll"><table id="tbl">
+    <thead><tr>
+      <th data-sort="priceEur">Price</th>
+      <th data-sort="country">Market</th>
+      <th data-sort="model">Model</th>
+      <th data-sort="gradeRank">Condition</th>
+      <th data-sort="storage">Storage</th>
+      <th data-sort="seller">Seller</th>
+      <th></th>
+    </tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+  <div id="empty"></div>
+  <div id="none"></div>
+  <footer id="foot"></footer>
+</div>
+
+<script>
+const FLAG = { de:'🇩🇪', fr:'🇫🇷', it:'🇮🇹', uk:'🇬🇧', be:'🇧🇪', nl:'🇳🇱' };
+const SYM  = { EUR:'€', GBP:'£' };
+let DATA = null, sortKey = 'priceEur', sortDir = 1;
+const state = { markets:new Set(), grades:new Set(), stockOnly:true };
+
+const money = o => o.price == null ? '—' : SYM[o.currency] + o.price.toFixed(2);
+const rel = iso => {
+  const s = (Date.now() - new Date(iso)) / 1000;
+  if (s < 90) return 'just now';
+  if (s < 5400) return Math.round(s/60) + ' min ago';
+  if (s < 172800) return Math.round(s/3600) + ' h ago';
+  return Math.round(s/86400) + ' days ago';
+};
+
+function visible() {
+  let rows = DATA.offers.slice();
+  if (state.stockOnly) rows = rows.filter(o => o.available);
+  if (state.markets.size) rows = rows.filter(o => state.markets.has(o.market));
+  if (state.grades.size)  rows = rows.filter(o => state.grades.has(o.grade));
+  return rows.sort((a,b) => {
+    const av = a[sortKey], bv = b[sortKey];
+    if (av == null) return 1;
+    if (bv == null) return -1;
+    return (typeof av === 'number' ? av - bv : String(av).localeCompare(String(bv))) * sortDir;
+  });
+}
+
+function render() {
+  const cap = DATA.config || {};
+  const rows = visible();
+  const isHit = o => o.available && o.gradeRank <= 3 &&
+    o.price <= (o.currency === 'GBP' ? cap.maxPriceGbp : cap.maxPriceEur);
+
+  document.getElementById('rows').innerHTML = rows.map(o => `
+    <tr class="${o.available ? '' : 'out'}">
+      <td class="price">${money(o)}${o.currency !== 'EUR' && o.priceEur != null
+        ? ` <span class="muted">≈€${Math.round(o.priceEur)}</span>` : ''}</td>
+      <td>${FLAG[o.market] || ''} ${o.country}</td>
+      <td class="model">${o.model}</td>
+      <td>${o.gradeLabel} ${isHit(o) ? '<span class="pill hit">deal</span>' : ''}</td>
+      <td>${o.storage || '—'}</td>
+      <td class="muted">${o.seller || '—'}</td>
+      <td>${o.available
+        ? `<a class="buy" href="${o.url}" target="_blank" rel="noopener">Buy →</a>`
+        : '<span class="pill out">sold out</span>'}</td>
+    </tr>`).join('');
+
+  document.getElementById('empty').innerHTML = rows.length ? ''
+    : '<div class="empty">Nothing matches those filters.</div>';
+
+  const live = DATA.offers.filter(o => o.available);
+  const best = live.slice().sort((a,b) => a.priceEur - b.priceEur)[0];
+  const hits = live.filter(isHit).length;
+  document.getElementById('hero').innerHTML = best ? `
+    <div class="big">${money(best)} <span class="muted" style="font-size:16px;font-weight:400">
+      — ${best.model}, ${best.gradeLabel}, ${FLAG[best.market]||''} ${best.country}</span></div>
+    <div class="cap">Cheapest in stock right now · ${live.length} listing${live.length===1?'':'s'} across
+      ${new Set(live.map(o=>o.market)).size} markets ·
+      ${hits} under your alert threshold (€${cap.maxPriceEur} / £${cap.maxPriceGbp})</div>`
+    : '<div class="big">Nothing in stock</div><div class="cap">No PS5 available in any tracked market.</div>';
+
+  const un = DATA.unavailable || [];
+  document.getElementById('none').innerHTML = un.length
+    ? `<div class="none">No offers at all right now for ` +
+      [...new Set(un.map(u => u.model))].map(m => {
+        const where = un.filter(u => u.model === m);
+        return `<b>${m}</b> in ${where.length === (DATA.counts.pages / 3) ? 'any market' :
+          where.map(u => (FLAG[u.market]||'') + ' ' + u.country).join(', ')}`;
+      }).join('; ') + `.</div>`
+    : '';
+
+  document.getElementById('foot').textContent =
+    `Updated ${rel(DATA.updated)} · ${DATA.counts.ok}/${DATA.counts.pages} pages scraped` +
+    (DATA.counts.errors ? ` · ${DATA.counts.errors} error(s)` : '');
+}
+
+function controls() {
+  const mk = [...new Set(DATA.offers.map(o => o.market))];
+  const gr = [...new Map(DATA.offers.map(o => [o.grade, o])).values()].sort((a,b)=>a.gradeRank-b.gradeRank);
+  const c = document.getElementById('controls');
+  c.innerHTML =
+    `<button class="chip" id="stock" aria-pressed="${state.stockOnly}">In stock only</button>` +
+    `<span class="chip sep">Market</span>` +
+    mk.map(m => `<button class="chip" data-mk="${m}" aria-pressed="false">${FLAG[m]||''} ${m.toUpperCase()}</button>`).join('') +
+    `<span class="chip sep">Condition</span>` +
+    gr.map(g => `<button class="chip" data-gr="${g.grade}" aria-pressed="false">${g.gradeLabel}</button>`).join('');
+  c.onclick = e => {
+    const b = e.target.closest('button.chip'); if (!b) return;
+    if (b.id === 'stock') state.stockOnly = !state.stockOnly;
+    else if (b.dataset.mk) state.markets.has(b.dataset.mk) ? state.markets.delete(b.dataset.mk) : state.markets.add(b.dataset.mk);
+    else if (b.dataset.gr) state.grades.has(b.dataset.gr) ? state.grades.delete(b.dataset.gr) : state.grades.add(b.dataset.gr);
+    else return;
+    b.setAttribute('aria-pressed',
+      b.id === 'stock' ? state.stockOnly : (b.dataset.mk ? state.markets.has(b.dataset.mk) : state.grades.has(b.dataset.gr)));
+    render();
+  };
+  document.querySelectorAll('th[data-sort]').forEach(th => th.onclick = () => {
+    const k = th.dataset.sort;
+    sortDir = (k === sortKey) ? -sortDir : 1; sortKey = k; render();
+  });
+}
+
+fetch('data.json?t=' + Date.now()).then(r => r.json()).then(d => {
+  DATA = d;
+  if (!d.verified) document.getElementById('banner').innerHTML =
+    '<div class="banner"><b>Unverified run.</b> The scraper could not confirm the live path, ' +
+    'so these prices may be stale. Treat them as a hint, not a fact.</div>';
+  controls(); render();
+}).catch(() => {
+  document.getElementById('hero').innerHTML =
+    '<div class="big">No data yet</div><div class="cap">Run <code>node scrape.mjs</code> to create data.json.</div>';
+});
+</script>

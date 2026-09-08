@@ -1,0 +1,5 @@
+.DS_Store
+node_modules/
+
+# Throwaway Chrome profiles, recreated on every run
+.profiles/
