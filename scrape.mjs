@@ -396,6 +396,9 @@ async function main() {
     console.log(JSON.stringify(offers, null, 2));
     if (unavailable.length) console.log('models with no offers at all:', JSON.stringify(unavailable));
     console.log(`\nverified=${verified} errors=${errors.length}`);
+    // A probe that found nothing is a FAILING probe. Without this the CI self-test
+    // reports success even when every page was blocked, which defeats its purpose.
+    if (!verified) process.exitCode = 1;
     return;
   }
 

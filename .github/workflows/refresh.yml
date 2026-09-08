@@ -7,10 +7,19 @@ on:
         description: 'Optional market/model to self-test instead of a full run (e.g. de/playstation-5)'
         required: false
         default: ''
-  schedule:
-    # Hourly at :17. Each run loads 18 product pages behind a real browser —
-    # don't make this much more frequent. See README on being a good citizen.
-    - cron: '17 * * * *'
+  # NO SCHEDULE — deliberately.
+  #
+  # Back Market refuses GitHub's datacenter IPs. Verified 8 Sep 2026: probes for both
+  # de/playstation-5 and uk/playstation-5 park on the bot challenge and never clear,
+  # while the identical code succeeds from a home connection. An hourly cron here would
+  # fail every hour, for ever, and mail a failure notice each time.
+  #
+  # The scrape therefore runs locally (see README: launchd) and pushes results here;
+  # this repo hosts the dashboard and the price history. workflow_dispatch is kept so
+  # the block can be re-tested later — if Back Market ever stops blocking cloud IPs,
+  # restore the line below and the whole thing runs itself again.
+  #   schedule:
+  #     - cron: '17 * * * *'
 
 permissions:
   contents: write
