@@ -59,11 +59,41 @@ The dashboard always shows **every** listing. The cap only decides what reaches 
    ```bash
    TELEGRAM_BOT_TOKEN=… TELEGRAM_CHAT_ID=… node notify.mjs
    ```
-5. Add both as **GitHub Actions secrets** (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`)
-   under Settings → Secrets and variables → Actions.
+5. Save them locally so the scheduled job can find them:
+   ```bash
+   cp .env.example .env    # then edit .env and paste your token
+   ```
+   `.env` is gitignored — it is never committed or pushed. Environment variables set in
+   the shell take precedence over the file, so a one-off run can override it.
 
-Without those env vars the scraper still runs and writes `data.json`; it just prints how
-many alerts it suppressed. Credentials are never written to a file in this repo.
+Without those values the scraper still runs and writes `data.json`; it just prints how
+many alerts it suppressed.
+
+## Scheduling — why this runs locally, not in the cloud
+
+**Back Market blocks data-centre IPs.** Verified 8 Sep 2026 with three GitHub Actions runs
+across two markets: every page parks on the bot challenge and never clears, while
+identical code succeeds from a home connection. Matching the User-Agent to the runner's
+actual platform (Linux, Chrome 152) made no difference, which leaves the network origin
+as the only variable. The hourly cron in `refresh.yml` is therefore commented out;
+`workflow_dispatch` is kept so the block can be re-tested cheaply later.
+
+So the scrape runs on the Mac and pushes results to GitHub, which hosts the dashboard and
+the price history. The schedule is a launchd agent at
+`~/Library/LaunchAgents/com.riccardo.ps5watch.plist`, running `refresh.sh` hourly at :17.
+Runs are skipped silently while the Mac is asleep.
+
+```bash
+launchctl print gui/$UID/com.riccardo.ps5watch   # is it loaded, has it run?
+tail -f ~/Library/Logs/ps5-watch.log             # what happened last time
+launchctl bootout gui/$UID/com.riccardo.ps5watch # stop it
+launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.riccardo.ps5watch.plist  # start it
+```
+
+For 24/7 coverage without a subscription, run the same repo on any always-on machine on
+the same home connection — the block is on the network, not the hardware. A residential
+proxy would also work but is billed per gigabyte: one full run is ~23 MB, so hourly checks
+are ~16 GB/month, which at typical rates is far from cheap.
 
 ## How it works, and why
 
@@ -121,7 +151,8 @@ disallows. Nothing is ever added to a basket or purchased.
 | `data.json` | Generated snapshot. Git history is the price log. |
 | `seen.json` | Alerts already sent, so re-runs don't re-notify. |
 | `selftest.mjs` | Offline checks for price parsing, thresholds and de-duplication. |
-| `.github/workflows/refresh.yml` | Hourly cron + manual `workflow_dispatch` probe. |
+| `.env` | Your Telegram token and chat id. Gitignored — never committed. |
+| `.github/workflows/refresh.yml` | Manual probe only; the cron is disabled (see Scheduling). |
 
 ## If it breaks
 

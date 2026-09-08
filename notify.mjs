@@ -8,10 +8,15 @@
 // Silence is deliberate when the tokens are absent: a local `node scrape.mjs`
 // on the Mac should scrape and write data.json without needing secrets set up.
 
-const TOKEN = process.env.TELEGRAM_BOT_TOKEN || '';
-const CHAT  = process.env.TELEGRAM_CHAT_ID   || '';
+// Load .env if present, so the scheduled job doesn't depend on a shell profile.
+// .env is gitignored and never committed. Environment variables already set win,
+// which is what lets CI (or a one-off command) override the file.
+try { process.loadEnvFile(new URL('.env', import.meta.url)); } catch { /* no .env, fine */ }
 
-export const canNotify = () => Boolean(TOKEN && CHAT);
+const TOKEN = () => process.env.TELEGRAM_BOT_TOKEN || '';
+const CHAT  = () => process.env.TELEGRAM_CHAT_ID   || '';
+
+export const canNotify = () => Boolean(TOKEN() && CHAT());
 
 const esc = s => String(s).replace(/[<>&]/g, c => ({ '<':'&lt;', '>':'&gt;', '&':'&amp;' }[c]));
 
@@ -29,11 +34,11 @@ export function formatOffer(o) {
 }
 
 async function send(text) {
-  const res = await fetch(`https://api.telegram.org/bot${TOKEN}/sendMessage`, {
+  const res = await fetch(`https://api.telegram.org/bot${TOKEN()}/sendMessage`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify({
-      chat_id: CHAT, text, parse_mode: 'HTML',
+      chat_id: CHAT(), text, parse_mode: 'HTML',
       link_preview_options: { is_disabled: true },
     }),
   });

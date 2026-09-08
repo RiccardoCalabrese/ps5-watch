@@ -3,3 +3,6 @@ node_modules/
 
 # Throwaway Chrome profiles, recreated on every run
 .profiles/
+
+# Local secrets. Never commit.
+.env
