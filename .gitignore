@@ -6,3 +6,11 @@ node_modules/
 
 # Local secrets. Never commit.
 .env
+
+# Python / uv (Parse SDK exploration only; production path is Node)
+.venv/
+__pycache__/
+*.pyc
+
+# Log from overnight.sh
+overnight.log
