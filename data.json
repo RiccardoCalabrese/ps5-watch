@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T17:12:12.106Z",
+  "updated": "2026-09-11T18:16:56.154Z",
   "verified": true,
   "config": {
     "maxPriceEur": 450,
@@ -100,7 +100,7 @@
       "seller": "Codalb International Ltd",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
       "firstSeen": "2026-09-11T17:10:13.296Z",
-      "lastSeen": "2026-09-11T17:10:13.296Z"
+      "lastSeen": "2026-09-11T18:14:57.059Z"
     },
     {
       "key": "fr|playstation-5|825 Go|very_good",
@@ -123,7 +123,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
       "firstSeen": "2026-09-11T17:08:37.969Z",
-      "lastSeen": "2026-09-11T17:08:37.969Z"
+      "lastSeen": "2026-09-11T18:13:23.151Z"
     },
     {
       "key": "fr|playstation-5|825 Go|excellent",
@@ -146,7 +146,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
       "firstSeen": "2026-09-11T17:08:37.969Z",
-      "lastSeen": "2026-09-11T17:08:37.969Z"
+      "lastSeen": "2026-09-11T18:13:23.151Z"
     },
     {
       "key": "uk|playstation-5-slim|1000 GB|good",
@@ -169,7 +169,30 @@
       "seller": "Brawn Tech Brokers",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
       "firstSeen": "2026-09-11T16:05:39.290Z",
-      "lastSeen": "2026-09-11T17:10:25.213Z"
+      "lastSeen": "2026-09-11T18:15:09.459Z"
+    },
+    {
+      "key": "uk|playstation-5-slim|1000 GB|very_good",
+      "market": "uk",
+      "country": "UK",
+      "model": "PlayStation 5 Slim",
+      "slug": "playstation-5-slim",
+      "productId": "8cd655d3-4702-4977-a3ec-c7c9951a10d1",
+      "storage": "1000 GB",
+      "color": "White",
+      "gradeId": "11",
+      "grade": "very_good",
+      "gradeRank": 2,
+      "gradeLabel": "Very good",
+      "gradeLabelRaw": "Good £520.00",
+      "price": 520,
+      "currency": "GBP",
+      "priceEur": 608.4,
+      "available": true,
+      "seller": "Brawn Tech Brokers",
+      "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
+      "firstSeen": "2026-09-11T18:15:09.459Z",
+      "lastSeen": "2026-09-11T18:15:09.459Z"
     },
     {
       "key": "it|playstation-5|825 GB|very_good",
@@ -192,7 +215,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-11T16:04:40.320Z",
-      "lastSeen": "2026-09-11T17:09:24.769Z"
+      "lastSeen": "2026-09-11T18:14:10.289Z"
     },
     {
       "key": "de|playstation-5|825 GB|very_good",
@@ -215,7 +238,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-11T16:03:06.443Z",
-      "lastSeen": "2026-09-11T17:07:50.313Z"
+      "lastSeen": "2026-09-11T18:12:36.436Z"
     },
     {
       "key": "de|playstation-5|825 GB|excellent",
@@ -238,7 +261,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-11T16:03:06.443Z",
-      "lastSeen": "2026-09-11T17:07:50.313Z"
+      "lastSeen": "2026-09-11T18:12:36.436Z"
     },
     {
       "key": "it|playstation-5|825 GB|excellent",
@@ -261,30 +284,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-11T16:04:40.320Z",
-      "lastSeen": "2026-09-11T17:09:24.769Z"
-    },
-    {
-      "key": "uk|playstation-5-slim|1000 GB|very_good",
-      "market": "uk",
-      "country": "UK",
-      "model": "PlayStation 5 Slim",
-      "slug": "playstation-5-slim",
-      "productId": "8cd655d3-4702-4977-a3ec-c7c9951a10d1",
-      "storage": "1000 GB",
-      "color": "White",
-      "gradeId": "11",
-      "grade": "very_good",
-      "gradeRank": 2,
-      "gradeLabel": "Very good",
-      "gradeLabelRaw": "Good £541.00",
-      "price": 541,
-      "currency": "GBP",
-      "priceEur": 632.97,
-      "available": true,
-      "seller": "Brawn Tech Brokers",
-      "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
-      "firstSeen": "2026-09-11T16:05:39.290Z",
-      "lastSeen": "2026-09-11T17:10:25.213Z"
+      "lastSeen": "2026-09-11T18:14:10.289Z"
     },
     {
       "key": "uk|playstation-5|825 GB|very_good",
@@ -299,15 +299,38 @@
       "grade": "very_good",
       "gradeRank": 2,
       "gradeLabel": "Very good",
-      "gradeLabelRaw": "Good £548.00",
-      "price": 548,
+      "gradeLabelRaw": "Good £542.00",
+      "price": 542,
       "currency": "GBP",
-      "priceEur": 641.16,
+      "priceEur": 634.14,
       "available": true,
       "seller": "Codalb International Ltd",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
-      "firstSeen": "2026-09-11T17:10:13.296Z",
-      "lastSeen": "2026-09-11T17:10:13.296Z"
+      "firstSeen": "2026-09-11T18:14:57.059Z",
+      "lastSeen": "2026-09-11T18:14:57.059Z"
+    },
+    {
+      "key": "uk|playstation-5-slim|1000 GB|excellent",
+      "market": "uk",
+      "country": "UK",
+      "model": "PlayStation 5 Slim",
+      "slug": "playstation-5-slim",
+      "productId": "8cd655d3-4702-4977-a3ec-c7c9951a10d1",
+      "storage": "1000 GB",
+      "color": "White",
+      "gradeId": "10",
+      "grade": "excellent",
+      "gradeRank": 1,
+      "gradeLabel": "Excellent",
+      "gradeLabelRaw": "Excellent £542.00",
+      "price": 542,
+      "currency": "GBP",
+      "priceEur": 634.14,
+      "available": true,
+      "seller": "Brawn Tech Brokers",
+      "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
+      "firstSeen": "2026-09-11T18:15:09.459Z",
+      "lastSeen": "2026-09-11T18:15:09.459Z"
     },
     {
       "key": "uk|playstation-5|825 GB|excellent",
@@ -322,15 +345,15 @@
       "grade": "excellent",
       "gradeRank": 1,
       "gradeLabel": "Excellent",
-      "gradeLabelRaw": "Excellent £564.00 Popular",
-      "price": 564,
+      "gradeLabelRaw": "Excellent £546.00 Popular",
+      "price": 546,
       "currency": "GBP",
-      "priceEur": 659.88,
+      "priceEur": 638.82,
       "available": true,
       "seller": "Codalb International Ltd",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
-      "firstSeen": "2026-09-11T17:10:13.296Z",
-      "lastSeen": "2026-09-11T17:10:13.296Z"
+      "firstSeen": "2026-09-11T18:14:57.059Z",
+      "lastSeen": "2026-09-11T18:14:57.059Z"
     },
     {
       "key": "be|playstation-5|825 Go|good",
@@ -353,30 +376,7 @@
       "seller": "WWGoodsCommerce (Allemagne)",
       "url": "https://www.backmarket.be/fr-be/p/playstation-5",
       "firstSeen": "2026-09-11T16:06:14.055Z",
-      "lastSeen": "2026-09-11T17:10:59.793Z"
-    },
-    {
-      "key": "be|playstation-5|825 Go|excellent",
-      "market": "be",
-      "country": "Belgium",
-      "model": "PlayStation 5",
-      "slug": "playstation-5",
-      "productId": "7b0d7cf2-735b-4e69-b953-e4bceae3306b",
-      "storage": "825 Go",
-      "color": "Blanc",
-      "gradeId": "10",
-      "grade": "excellent",
-      "gradeRank": 1,
-      "gradeLabel": "Excellent",
-      "gradeLabelRaw": "Parfait état 678,00 €",
-      "price": 678,
-      "currency": "EUR",
-      "priceEur": 678,
-      "available": true,
-      "seller": "WWGoodsCommerce (Allemagne)",
-      "url": "https://www.backmarket.be/fr-be/p/playstation-5",
-      "firstSeen": "2026-09-11T16:06:14.055Z",
-      "lastSeen": "2026-09-11T17:10:59.793Z"
+      "lastSeen": "2026-09-11T18:15:44.465Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|excellent",
@@ -399,7 +399,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-11T02:11:05.953Z",
-      "lastSeen": "2026-09-11T17:10:37.168Z"
+      "lastSeen": "2026-09-11T18:15:21.823Z"
     },
     {
       "key": "de|playstation-5|825 GB|good",
@@ -422,7 +422,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-11T16:03:06.443Z",
-      "lastSeen": "2026-09-11T17:07:50.313Z"
+      "lastSeen": "2026-09-11T18:12:36.436Z"
     },
     {
       "key": "fr|playstation-5|825 Go|good",
@@ -445,7 +445,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
       "firstSeen": "2026-09-11T17:08:37.969Z",
-      "lastSeen": "2026-09-11T17:08:37.969Z"
+      "lastSeen": "2026-09-11T18:13:23.151Z"
     },
     {
       "key": "it|playstation-5|825 GB|good",
@@ -468,30 +468,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-11T16:04:40.320Z",
-      "lastSeen": "2026-09-11T17:09:24.769Z"
-    },
-    {
-      "key": "uk|playstation-5-slim|1000 GB|excellent",
-      "market": "uk",
-      "country": "UK",
-      "model": "PlayStation 5 Slim",
-      "slug": "playstation-5-slim",
-      "productId": "8cd655d3-4702-4977-a3ec-c7c9951a10d1",
-      "storage": "1000 GB",
-      "color": "White",
-      "gradeId": "10",
-      "grade": "excellent",
-      "gradeRank": 1,
-      "gradeLabel": "Excellent",
-      "gradeLabelRaw": "Excellent Sold out",
-      "price": null,
-      "currency": "GBP",
-      "priceEur": null,
-      "available": false,
-      "seller": "Brawn Tech Brokers",
-      "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
-      "firstSeen": "2026-09-11T16:05:39.290Z",
-      "lastSeen": "2026-09-11T17:10:25.213Z"
+      "lastSeen": "2026-09-11T18:14:10.289Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|good",
@@ -514,7 +491,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-10T20:47:39.549Z",
-      "lastSeen": "2026-09-11T17:10:37.168Z"
+      "lastSeen": "2026-09-11T18:15:21.823Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|very_good",
@@ -537,7 +514,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-10T20:47:39.549Z",
-      "lastSeen": "2026-09-11T17:10:37.168Z"
+      "lastSeen": "2026-09-11T18:15:21.823Z"
     },
     {
       "key": "be|playstation-5|825 Go|very_good",
@@ -560,7 +537,30 @@
       "seller": "WWGoodsCommerce (Allemagne)",
       "url": "https://www.backmarket.be/fr-be/p/playstation-5",
       "firstSeen": "2026-09-11T16:06:14.055Z",
-      "lastSeen": "2026-09-11T17:10:59.793Z"
+      "lastSeen": "2026-09-11T18:15:44.465Z"
+    },
+    {
+      "key": "be|playstation-5|825 Go|excellent",
+      "market": "be",
+      "country": "Belgium",
+      "model": "PlayStation 5",
+      "slug": "playstation-5",
+      "productId": "7b0d7cf2-735b-4e69-b953-e4bceae3306b",
+      "storage": "825 Go",
+      "color": "Blanc",
+      "gradeId": "10",
+      "grade": "excellent",
+      "gradeRank": 1,
+      "gradeLabel": "Excellent",
+      "gradeLabelRaw": "Parfait état Déjà vendu",
+      "price": null,
+      "currency": "EUR",
+      "priceEur": null,
+      "available": false,
+      "seller": "WWGoodsCommerce (Allemagne)",
+      "url": "https://www.backmarket.be/fr-be/p/playstation-5",
+      "firstSeen": "2026-09-11T18:15:44.465Z",
+      "lastSeen": "2026-09-11T18:15:44.465Z"
     },
     {
       "key": "nl|playstation-5|825 GB|good",
@@ -575,7 +575,7 @@
       "grade": "good",
       "gradeRank": 3,
       "gradeLabel": "Good",
-      "gradeLabelRaw": "Goed € 675,00",
+      "gradeLabelRaw": "Goed € 649,00",
       "price": null,
       "currency": "EUR",
       "priceEur": null,
@@ -583,7 +583,7 @@
       "seller": null,
       "url": "https://www.backmarket.nl/nl-nl/p/playstation-5",
       "firstSeen": "2026-09-11T11:24:45.075Z",
-      "lastSeen": "2026-09-11T17:11:46.323Z"
+      "lastSeen": "2026-09-11T18:16:30.757Z"
     },
     {
       "key": "nl|playstation-5|825 GB|very_good",
@@ -606,7 +606,7 @@
       "seller": null,
       "url": "https://www.backmarket.nl/nl-nl/p/playstation-5",
       "firstSeen": "2026-09-11T11:24:45.075Z",
-      "lastSeen": "2026-09-11T17:11:46.323Z"
+      "lastSeen": "2026-09-11T18:16:30.757Z"
     },
     {
       "key": "nl|playstation-5|825 GB|excellent",
@@ -621,7 +621,7 @@
       "grade": "excellent",
       "gradeRank": 1,
       "gradeLabel": "Excellent",
-      "gradeLabelRaw": "Uitstekend € 679,00 Populair",
+      "gradeLabelRaw": "Uitstekend Uitverkocht",
       "price": null,
       "currency": "EUR",
       "priceEur": null,
@@ -629,7 +629,7 @@
       "seller": null,
       "url": "https://www.backmarket.nl/nl-nl/p/playstation-5",
       "firstSeen": "2026-09-11T11:24:45.075Z",
-      "lastSeen": "2026-09-11T17:11:46.323Z"
+      "lastSeen": "2026-09-11T18:16:30.757Z"
     }
   ]
 }
