@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-11T02:12:40.537Z",
+  "updated": "2026-09-11T03:17:21.419Z",
   "verified": true,
   "config": {
     "maxPriceEur": 450,
@@ -10,9 +10,9 @@
     "pages": 18,
     "ok": 18,
     "errors": 0,
-    "offers": 27,
-    "inStock": 15,
-    "modelsWithNoOffers": 9,
+    "offers": 24,
+    "inStock": 13,
+    "modelsWithNoOffers": 10,
     "alerted": 0
   },
   "errors": [],
@@ -22,6 +22,12 @@
       "country": "Germany",
       "model": "PlayStation 5 Pro",
       "slug": "playstation-5-pro"
+    },
+    {
+      "market": "fr",
+      "country": "France",
+      "model": "PlayStation 5",
+      "slug": "playstation-5"
     },
     {
       "market": "fr",
@@ -94,7 +100,7 @@
       "seller": "Luke Hannah",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
       "firstSeen": "2026-09-11T01:06:10.937Z",
-      "lastSeen": "2026-09-11T02:10:53.187Z"
+      "lastSeen": "2026-09-11T03:15:36.181Z"
     },
     {
       "key": "it|playstation-5|825 GB|very_good",
@@ -117,7 +123,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-11T02:09:53.335Z",
-      "lastSeen": "2026-09-11T02:09:53.335Z"
+      "lastSeen": "2026-09-11T03:14:37.731Z"
     },
     {
       "key": "it|playstation-5|825 GB|excellent",
@@ -140,7 +146,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-11T02:09:53.335Z",
-      "lastSeen": "2026-09-11T02:09:53.335Z"
+      "lastSeen": "2026-09-11T03:14:37.731Z"
     },
     {
       "key": "it|playstation-5-slim|825 GB|very_good",
@@ -163,7 +169,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5-slim",
       "firstSeen": "2026-09-11T02:10:05.705Z",
-      "lastSeen": "2026-09-11T02:10:05.705Z"
+      "lastSeen": "2026-09-11T03:14:49.779Z"
     },
     {
       "key": "uk|playstation-5-slim|825 GB|excellent",
@@ -186,7 +192,7 @@
       "seller": "Luke Hannah",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
       "firstSeen": "2026-09-11T01:06:10.937Z",
-      "lastSeen": "2026-09-11T02:10:53.187Z"
+      "lastSeen": "2026-09-11T03:15:36.181Z"
     },
     {
       "key": "uk|playstation-5|825 GB|good",
@@ -209,30 +215,7 @@
       "seller": "WJD Repairs",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
       "firstSeen": "2026-09-11T02:10:40.944Z",
-      "lastSeen": "2026-09-11T02:10:40.944Z"
-    },
-    {
-      "key": "fr|playstation-5|825 Go|very_good",
-      "market": "fr",
-      "country": "France",
-      "model": "PlayStation 5",
-      "slug": "playstation-5",
-      "productId": "3d7bd6f6-f1c9-480c-b0fb-f33e2e2094cb",
-      "storage": "825 Go",
-      "color": "Blanc",
-      "gradeId": "11",
-      "grade": "very_good",
-      "gradeRank": 2,
-      "gradeLabel": "Very good",
-      "gradeLabelRaw": "Très bon état 623,00 €",
-      "price": 623,
-      "currency": "EUR",
-      "priceEur": 623,
-      "available": true,
-      "seller": "M13 (Pologne)",
-      "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
-      "firstSeen": "2026-09-11T02:09:07.052Z",
-      "lastSeen": "2026-09-11T02:09:07.052Z"
+      "lastSeen": "2026-09-11T03:15:24.294Z"
     },
     {
       "key": "fr|playstation-5-slim|825 Go|very_good",
@@ -255,7 +238,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5-slim",
       "firstSeen": "2026-09-11T02:09:18.885Z",
-      "lastSeen": "2026-09-11T02:09:18.885Z"
+      "lastSeen": "2026-09-11T03:14:03.293Z"
     },
     {
       "key": "uk|playstation-5|825 GB|excellent",
@@ -278,7 +261,7 @@
       "seller": "WJD Repairs",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
       "firstSeen": "2026-09-11T02:10:40.944Z",
-      "lastSeen": "2026-09-11T02:10:40.944Z"
+      "lastSeen": "2026-09-11T03:15:24.294Z"
     },
     {
       "key": "de|playstation-5-slim|825 GB|very_good",
@@ -301,7 +284,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5-slim",
       "firstSeen": "2026-09-11T01:03:52.523Z",
-      "lastSeen": "2026-09-11T02:08:33.104Z"
+      "lastSeen": "2026-09-11T03:13:17.006Z"
     },
     {
       "key": "de|playstation-5|825 GB|very_good",
@@ -324,7 +307,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-11T01:03:40.605Z",
-      "lastSeen": "2026-09-11T02:08:20.846Z"
+      "lastSeen": "2026-09-11T03:13:04.579Z"
     },
     {
       "key": "de|playstation-5|825 GB|excellent",
@@ -347,30 +330,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-11T01:03:40.605Z",
-      "lastSeen": "2026-09-11T02:08:20.846Z"
-    },
-    {
-      "key": "fr|playstation-5|825 Go|excellent",
-      "market": "fr",
-      "country": "France",
-      "model": "PlayStation 5",
-      "slug": "playstation-5",
-      "productId": "3d7bd6f6-f1c9-480c-b0fb-f33e2e2094cb",
-      "storage": "825 Go",
-      "color": "Blanc",
-      "gradeId": "10",
-      "grade": "excellent",
-      "gradeRank": 1,
-      "gradeLabel": "Excellent",
-      "gradeLabelRaw": "Parfait état 626,00 € Best-seller",
-      "price": 626,
-      "currency": "EUR",
-      "priceEur": 626,
-      "available": true,
-      "seller": "M13 (Pologne)",
-      "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
-      "firstSeen": "2026-09-11T02:09:07.052Z",
-      "lastSeen": "2026-09-11T02:09:07.052Z"
+      "lastSeen": "2026-09-11T03:13:04.579Z"
     },
     {
       "key": "uk|playstation-5-slim|825 GB|very_good",
@@ -393,7 +353,7 @@
       "seller": "Luke Hannah",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-slim",
       "firstSeen": "2026-09-11T01:06:10.937Z",
-      "lastSeen": "2026-09-11T02:10:53.187Z"
+      "lastSeen": "2026-09-11T03:15:36.181Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|excellent",
@@ -416,7 +376,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-11T02:11:05.953Z",
-      "lastSeen": "2026-09-11T02:11:05.953Z"
+      "lastSeen": "2026-09-11T03:15:48.111Z"
     },
     {
       "key": "de|playstation-5|825 GB|good",
@@ -439,7 +399,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5",
       "firstSeen": "2026-09-10T20:44:56.458Z",
-      "lastSeen": "2026-09-11T02:08:20.846Z"
+      "lastSeen": "2026-09-11T03:13:04.579Z"
     },
     {
       "key": "de|playstation-5-slim|825 GB|good",
@@ -462,7 +422,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5-slim",
       "firstSeen": "2026-09-08T15:33:00.734Z",
-      "lastSeen": "2026-09-11T02:08:33.104Z"
+      "lastSeen": "2026-09-11T03:13:17.006Z"
     },
     {
       "key": "de|playstation-5-slim|825 GB|excellent",
@@ -485,30 +445,7 @@
       "seller": "M13 (Polen)",
       "url": "https://www.backmarket.de/de-de/p/playstation-5-slim",
       "firstSeen": "2026-09-10T21:49:49.519Z",
-      "lastSeen": "2026-09-11T02:08:33.104Z"
-    },
-    {
-      "key": "fr|playstation-5|825 Go|good",
-      "market": "fr",
-      "country": "France",
-      "model": "PlayStation 5",
-      "slug": "playstation-5",
-      "productId": "3d7bd6f6-f1c9-480c-b0fb-f33e2e2094cb",
-      "storage": "825 Go",
-      "color": "Blanc",
-      "gradeId": "12",
-      "grade": "good",
-      "gradeRank": 3,
-      "gradeLabel": "Good",
-      "gradeLabelRaw": "État correct Déjà vendu",
-      "price": null,
-      "currency": "EUR",
-      "priceEur": null,
-      "available": false,
-      "seller": "M13 (Pologne)",
-      "url": "https://www.backmarket.fr/fr-fr/p/playstation-5",
-      "firstSeen": "2026-09-10T20:45:42.722Z",
-      "lastSeen": "2026-09-11T02:09:07.052Z"
+      "lastSeen": "2026-09-11T03:13:17.006Z"
     },
     {
       "key": "fr|playstation-5-slim|825 Go|good",
@@ -531,7 +468,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5-slim",
       "firstSeen": "2026-09-11T02:09:18.885Z",
-      "lastSeen": "2026-09-11T02:09:18.885Z"
+      "lastSeen": "2026-09-11T03:14:03.293Z"
     },
     {
       "key": "fr|playstation-5-slim|825 Go|excellent",
@@ -554,7 +491,7 @@
       "seller": "M13 (Pologne)",
       "url": "https://www.backmarket.fr/fr-fr/p/playstation-5-slim",
       "firstSeen": "2026-09-11T02:09:18.885Z",
-      "lastSeen": "2026-09-11T02:09:18.885Z"
+      "lastSeen": "2026-09-11T03:14:03.293Z"
     },
     {
       "key": "it|playstation-5|825 GB|good",
@@ -577,7 +514,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5",
       "firstSeen": "2026-09-10T20:46:29.349Z",
-      "lastSeen": "2026-09-11T02:09:53.335Z"
+      "lastSeen": "2026-09-11T03:14:37.731Z"
     },
     {
       "key": "it|playstation-5-slim|825 GB|good",
@@ -600,7 +537,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5-slim",
       "firstSeen": "2026-09-08T15:34:33.977Z",
-      "lastSeen": "2026-09-11T02:10:05.705Z"
+      "lastSeen": "2026-09-11T03:14:49.779Z"
     },
     {
       "key": "it|playstation-5-slim|825 GB|excellent",
@@ -623,7 +560,7 @@
       "seller": "M13 (Polonia)",
       "url": "https://www.backmarket.it/it-it/p/playstation-5-slim",
       "firstSeen": "2026-09-10T21:51:22.477Z",
-      "lastSeen": "2026-09-11T02:10:05.705Z"
+      "lastSeen": "2026-09-11T03:14:49.779Z"
     },
     {
       "key": "uk|playstation-5|825 GB|very_good",
@@ -646,7 +583,7 @@
       "seller": "WJD Repairs",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5",
       "firstSeen": "2026-09-11T02:10:40.944Z",
-      "lastSeen": "2026-09-11T02:10:40.944Z"
+      "lastSeen": "2026-09-11T03:15:24.294Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|good",
@@ -669,7 +606,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-10T20:47:39.549Z",
-      "lastSeen": "2026-09-11T02:11:05.953Z"
+      "lastSeen": "2026-09-11T03:15:48.111Z"
     },
     {
       "key": "uk|playstation-5-pro|2000 GB|very_good",
@@ -692,7 +629,7 @@
       "seller": "NPJ Trading Limited",
       "url": "https://www.backmarket.co.uk/en-gb/p/playstation-5-pro",
       "firstSeen": "2026-09-10T20:47:39.549Z",
-      "lastSeen": "2026-09-11T02:11:05.953Z"
+      "lastSeen": "2026-09-11T03:15:48.111Z"
     }
   ]
 }
